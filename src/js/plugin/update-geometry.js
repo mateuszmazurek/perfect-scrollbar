@@ -28,7 +28,6 @@ function updateCss(element, i) {
   } else {
     xRailOffset.top = i.scrollbarXTop + element.scrollTop;
   }
-  dom.css(i.scrollbarXRail, xRailOffset);
 
   var yRailOffset = {top: element.scrollTop, height: i.railYHeight};
   if (i.isScrollbarYUsingRight) {
@@ -44,6 +43,10 @@ function updateCss(element, i) {
       yRailOffset.left = i.scrollbarYLeft + element.scrollLeft;
     }
   }
+
+  i.settings.modifyCss(element, i, xRailOffset, yRailOffset);
+
+  dom.css(i.scrollbarXRail, xRailOffset);
   dom.css(i.scrollbarYRail, yRailOffset);
 
   dom.css(i.scrollbarX, {left: i.scrollbarXLeft, width: i.scrollbarXWidth - i.railBorderXWidth});
