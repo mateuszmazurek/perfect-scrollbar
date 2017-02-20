@@ -13,5 +13,6 @@ module.exports = {
   wheelPropagation: false,
   wheelSpeed: 1,
   theme: 'default',
-  modifyCss: function() {}
+  modifyCss: function() {},
+  onInitialized: function() {}
 };

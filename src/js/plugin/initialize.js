@@ -32,6 +32,7 @@ module.exports = function (element, userSettings) {
   });
 
   nativeScrollHandler(element);
-
   updateGeometry(element);
+
+  i.settings.onInitialized(i, element, updateGeometry);
 };
